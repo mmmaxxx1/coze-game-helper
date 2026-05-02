@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Помощник по прокачке персонажей</title>
+  <link rel="stylesheet" href="./main.css" />
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: #0f0f0f;
+      font-family: system-ui, -apple-system, sans-serif;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Coze Chat SDK -->
+  <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.10/libs/oversea/index.js"></script>
+
+  <script>
+    new CozeWebSDK.WebChatClient({
+      config: {
+        type: 'bot',
+        bot_id: '7634821684104921141',
+        isIframe: false,
+      },
+      auth: {
+        type: 'token',
+        token: 'pat_BfRz7kr2KhMbxkE0hUPTcX8t3cRD5lr7XqFN212K1sLjrYoY1c2SmxaxkYxR9REu',                    // ← ТВОЙ ТОКЕН
+        onRefreshToken: async () => 'pat_BfRz7kr2KhMbxkE0hUPTcX8t3cRD5lr7XqFN212K1sLjrYoY1c2SmxaxkYxR9REu'
+      },
+      userInfo: {
+        id: 'player',
+        nickname: 'Игрок',
+      },
+      ui: {
+        base: {
+          icon: 'https://sf-coze-web-cdn.coze.com/obj/eden-sg/lm-lgvj/ljhwZthlaukjlkulzlp/coze/chatsdk-logo.png',
+          layout: 'pc',        // можно попробовать 'mobile'
+          lang: 'ru',
+          zIndex: 10000
+        },
+        header: {
+          isShow: true,
+          isNeedClose: true,
+        },
+        asstBtn: {
+          isNeed: true
+        },
+        chatBot: {
+          title: 'Помощник по прокачке',
+          uploadable: true,
+          width: 420,          // на ПК
+        }
+      }
+    });
+  </script>
+</body>
+</html>
