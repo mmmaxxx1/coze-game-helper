@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Помощник по прокачке</title>
   
   <style>
@@ -11,7 +11,6 @@
       padding: 0;
       height: 100%;
       background: #000 url('https://www.zbrushcentral.com/uploads/default/optimized/4X/4/a/a/4aa6134a1ccd2a832d4afa1a1c57423a7b82e503_2_1500x1156.jpeg') center/cover no-repeat;
-      font-family: system-ui, sans-serif;
       overflow: hidden;
     }
   </style>
@@ -25,11 +24,11 @@
       config: {
         type: 'bot',
         bot_id: '7634821684104921141',
-        isIframe: false,
+        isIframe: true,          // ← Важное изменение
       },
       auth: {
         type: 'token',
-        token: 'pat_BfRz7kr2KhMbxkE0hUPTcX8t3cRD5lr7XqFN212K1sLjrYoY1c2SmxaxkYxR9REu',           // ← ВСТАВЬ СВОЙ ТОКЕН
+        token: 'pat_BfRz7kr2KhMbxkE0hUPTcX8t3cRD5lr7XqFN212K1sLjrYoY1c2SmxaxkYxR9REu',
         onRefreshToken: async () => 'pat_BfRz7kr2KhMbxkE0hUPTcX8t3cRD5lr7XqFN212K1sLjrYoY1c2SmxaxkYxR9REu'
       },
       userInfo: {
@@ -38,15 +37,11 @@
       },
       ui: {
         base: {
-          layout: 'pc',      // на телефоне лучше 'pc' в этом SDK
+          layout: 'pc',
           lang: 'ru',
-          zIndex: 9999
+          zIndex: 10000
         },
-        header: {
-          isShow: true,
-          isNeedClose: true
-        },
-        asstBtn: { isNeed: true },
+        header: { isShow: true, isNeedClose: true },
         chatBot: {
           title: 'Помощник по прокачке',
           uploadable: true,
