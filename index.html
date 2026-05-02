@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Помощник по прокачке персонажей</title>
   <link rel="stylesheet" href="./main.css" />
   
@@ -10,14 +10,31 @@
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      background: #0f0f0f;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
       font-family: system-ui, -apple-system, sans-serif;
-      overflow: hidden;
+      color: #eee;
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px 10px;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
     }
   </style>
 </head>
 <body>
+
+  <div class="header">
+    <h1>⚔️ Помощник по прокачке</h1>
+  </div>
 
   <!-- Coze Chat SDK -->
   <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.10/libs/oversea/index.js"></script>
@@ -31,7 +48,7 @@
       },
       auth: {
         type: 'token',
-        token: 'pat_BfRz7kr2KhMbxkE0hUPTcX8t3cRD5lr7XqFN212K1sLjrYoY1c2SmxaxkYxR9REu',                    // ← ТВОЙ ТОКЕН
+        token: 'pat_BfRz7kr2KhMbxkE0hUPTcX8t3cRD5lr7XqFN212K1sLjrYoY1c2SmxaxkYxR9REu',           // ← ВСТАВЬ СВОЙ ТОКЕН
         onRefreshToken: async () => 'pat_BfRz7kr2KhMbxkE0hUPTcX8t3cRD5lr7XqFN212K1sLjrYoY1c2SmxaxkYxR9REu'
       },
       userInfo: {
@@ -40,8 +57,7 @@
       },
       ui: {
         base: {
-          icon: 'https://sf-coze-web-cdn.coze.com/obj/eden-sg/lm-lgvj/ljhwZthlaukjlkulzlp/coze/chatsdk-logo.png',
-          layout: 'pc',        // можно попробовать 'mobile'
+          layout: 'pc',
           lang: 'ru',
           zIndex: 10000
         },
@@ -55,7 +71,7 @@
         chatBot: {
           title: 'Помощник по прокачке',
           uploadable: true,
-          width: 420,          // на ПК
+          width: 440,
         }
       }
     });
