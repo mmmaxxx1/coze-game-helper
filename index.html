@@ -2,40 +2,39 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Помощник по прокачке Diablo 2</title>
   
   <style>
     body {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
                   url('https://images.unsplash.com/photo-1611996575749-79a3a250f948?q=80&w=1920') center/cover no-repeat;
       font-family: system-ui, sans-serif;
-      color: #e0e0e0;
+      overflow: hidden;
     }
 
     .header {
       text-align: center;
-      padding: 15px 10px;
-      background: rgba(20, 5, 5, 0.9);
+      padding: 12px 10px;
+      background: rgba(20, 5, 5, 0.95);
       border-bottom: 3px solid #b38b2d;
-      box-shadow: 0 4px 15px rgba(179, 139, 45, 0.3);
     }
 
     .header h1 {
       margin: 0;
-      font-size: 1.9rem;
-      text-shadow: 0 0 10px #ffcc00;
-      letter-spacing: 1px;
+      font-size: 1.65rem;
+      color: #ffcc00;
+      text-shadow: 0 0 10px #b38b2d;
     }
   </style>
 </head>
 <body>
 
   <div class="header">
-    <h1>⚔️ Помощник по прокачке Diablo 2</h1>
+    <h1>⚔️ Помощник по прокачке</h1>
   </div>
 
   <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.10/libs/oversea/index.js"></script>
@@ -49,8 +48,8 @@
       },
       auth: {
         type: 'token',
-        token: 'pat_BfRz7kr2KhMbxkE0hUPTcX8t3cRD5lr7XqFN212K1sLjrYoY1c2SmxaxkYxR9REu',           // ← ВСТАВЬ СВОЙ ТОКЕН
-        onRefreshToken: async () => 'pat_BfRz7kr2KhMbxkE0hUPTcX8t3cRD5lr7XqFN212K1sLjrYoY1c2SmxaxkYxR9REu'
+        token: 'paste_your_token_here',           // ← ВСТАВЬ ТОКЕН
+        onRefreshToken: async () => 'paste_your_token_here'
       },
       userInfo: {
         id: 'player',
@@ -58,7 +57,7 @@
       },
       ui: {
         base: {
-          layout: 'pc',
+          layout: 'mobile',   // ← Важно для телефона
           lang: 'ru',
           zIndex: 10000
         },
@@ -67,7 +66,7 @@
         chatBot: {
           title: 'Помощник Diablo 2',
           uploadable: true,
-          width: 440,
+          width: 400,         // будет адаптироваться
         }
       }
     });
