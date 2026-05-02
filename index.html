@@ -9,9 +9,16 @@
     body, html {
       margin: 0;
       padding: 0;
-      height: 100%;
+      height: 100vh;
       background: #000 url('https://www.zbrushcentral.com/uploads/default/optimized/4X/4/a/a/4aa6134a1ccd2a832d4afa1a1c57423a7b82e503_2_1500x1156.jpeg') center/cover no-repeat;
       overflow: hidden;
+    }
+
+    /* Принудительно растягиваем чат */
+    .coze-chat-container, .chat-bot {
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 100vh !important;
     }
   </style>
 </head>
@@ -24,7 +31,7 @@
       config: {
         type: 'bot',
         bot_id: '7634821684104921141',
-        isIframe: true,          // ← Важное изменение
+        isIframe: false,
       },
       auth: {
         type: 'token',
@@ -42,6 +49,7 @@
           zIndex: 10000
         },
         header: { isShow: true, isNeedClose: true },
+        asstBtn: { isNeed: true },
         chatBot: {
           title: 'Помощник по прокачке',
           uploadable: true,
